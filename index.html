@@ -33,8 +33,8 @@
         <h2>Summary</h2>
         <p>
           Formwarden stores the details you choose to save (your “profiles”) <strong>encrypted, on your own device</strong>. The developer of
-          Formwarden never receives, sees or stores your profile data. Formwarden contains no analytics, tracking or advertising. The only
-          data that ever leaves your browser is a Formwarden Pro license key, when you enter one, so that it can be verified.
+          Formwarden never receives, sees or stores your profile data. Formwarden makes <strong>no network requests at all</strong> and contains no
+          analytics, tracking or advertising: nothing you store, and nothing about the pages you visit, ever leaves your browser.
         </p>
 
         <h2>Who is responsible</h2>
@@ -47,7 +47,7 @@
         <table>
           <tr><th>Data</th><th>How it is stored</th></tr>
           <tr>
-            <td>Profile data you enter: names, username, email, phone, date and place of birth, tax identifiers (for example codice fiscale or SSN), addresses, company, VAT number, custom fields</td>
+            <td>Profile data you enter: names, username, email, phone, date and place of birth, tax identifiers (for example codice fiscale or SSN), addresses, company, VAT number</td>
             <td>Encrypted with AES-256-GCM in <code>chrome.storage.local</code>. The key is derived from your master password with PBKDF2-SHA-256 (600,000 iterations). Your master password is never stored.</td>
           </tr>
           <tr>
@@ -55,7 +55,6 @@
             <td>Kept only in memory-backed <code>chrome.storage.session</code>, which is erased when the vault locks (after the idle time you choose) or the browser closes.</td>
           </tr>
           <tr><td>Settings (auto-lock time, badge preference, detection threshold)</td><td>Unencrypted in <code>chrome.storage.local</code>. They contain no personal data.</td></tr>
-          <tr><td>Formwarden Pro license key and its last verification result (Pro users only)</td><td>Unencrypted in <code>chrome.storage.local</code>, so Pro keeps working while the vault is locked or offline.</td></tr>
         </table>
 
         <h2>Web pages you visit</h2>
@@ -65,23 +64,13 @@
           review them and press “Fill”, and Formwarden never submits a form: you do. When you fill a form, the website receives the values you
           approved, as it would if you typed them yourself; what the website does with them is governed by that website's own privacy policy.
         </p>
-        <p>Per-site email aliases (for example <code>you+shop@example.com</code>) are generated locally from the website's domain.</p>
 
         <h2>Data that leaves your device</h2>
-        <p>Formwarden Free sends nothing anywhere. If you use Formwarden Pro:</p>
-        <ul>
-          <li>
-            <strong>License verification.</strong> Your license key, the Formwarden product identifiers and, if device activations are enabled, an
-            activation identifier and a random installation identifier are sent to <a href="https://polar.sh">Polar</a> (Polar Software Inc.), our
-            payment provider and merchant of record, at activation and at most about once a day afterwards. Polar's reply states whether the key is
-            valid. It may also contain purchaser details; Formwarden discards them and does not store them.
-          </li>
-          <li>
-            <strong>Purchases.</strong> Buying Pro happens on Polar's checkout page, not inside the extension. Polar processes payment and billing data
-            under <a href="https://polar.sh/legal/privacy">Polar's privacy policy</a>.
-          </li>
-        </ul>
-        <p>Your profile data, master password, browsing history and page contents are never sent to Polar or to anyone else.</p>
+        <p>
+          None. Formwarden contains no code that sends data over the network, and its content security policy blocks network requests from the
+          extension's own pages. Your profile data, master password, browsing history and page contents are never sent to the developer or to anyone
+          else.
+        </p>
 
         <h2>What we never do</h2>
         <ul>
@@ -106,9 +95,9 @@
         <h2>Your rights</h2>
         <p>
           Under the GDPR you have rights of access, rectification, erasure, restriction, portability and objection. Profile data is processed only on your
-          device, and you can view, change, export or erase it at any time in Formwarden. For license and purchase data, contact
-          <a href="mailto:giordano.a90@gmail.com">giordano.a90@gmail.com</a> or Polar. You may also lodge a complaint with your data protection authority (in Italy, the Garante per la
-          protezione dei dati personali).
+          device, and you can view, change, export or erase it at any time in Formwarden. For any question about this policy, contact
+          <a href="mailto:giordano.a90@gmail.com">giordano.a90@gmail.com</a>. You may also lodge a complaint with your data protection authority (in
+          Italy, the Garante per la protezione dei dati personali).
         </p>
 
         <h2>Children</h2>
@@ -125,8 +114,8 @@
         <h2>In sintesi</h2>
         <p>
           Formwarden conserva i dati che scegli di salvare (i tuoi “profili”) <strong>cifrati, sul tuo dispositivo</strong>. Lo sviluppatore di
-          Formwarden non riceve, non vede e non conserva mai i dati dei tuoi profili. Formwarden non contiene analytics, tracciamento o pubblicità.
-          L'unico dato che esce dal browser è la chiave di licenza di Formwarden Pro, quando la inserisci, per verificarne la validità.
+          Formwarden non riceve, non vede e non conserva mai i dati dei tuoi profili. Formwarden <strong>non effettua alcuna richiesta di rete</strong>
+          e non contiene analytics, tracciamento o pubblicità: nulla di ciò che salvi, e nulla delle pagine che visiti, esce dal tuo browser.
         </p>
 
         <h2>Titolare</h2>
@@ -139,7 +128,7 @@
         <table>
           <tr><th>Dati</th><th>Come sono conservati</th></tr>
           <tr>
-            <td>Dati dei profili che inserisci: nomi, nome utente, email, telefono, data e luogo di nascita, identificativi fiscali (per esempio codice fiscale o SSN), indirizzi, azienda, partita IVA, campi personalizzati</td>
+            <td>Dati dei profili che inserisci: nomi, nome utente, email, telefono, data e luogo di nascita, identificativi fiscali (per esempio codice fiscale o SSN), indirizzi, azienda, partita IVA</td>
             <td>Cifrati con AES-256-GCM in <code>chrome.storage.local</code>. La chiave è derivata dalla tua password principale con PBKDF2-SHA-256 (600.000 iterazioni). La password principale non viene mai salvata.</td>
           </tr>
           <tr>
@@ -147,7 +136,6 @@
             <td>Solo nella memoria volatile <code>chrome.storage.session</code>, cancellata quando il vault si blocca (dopo il tempo di inattività che scegli) o alla chiusura del browser.</td>
           </tr>
           <tr><td>Impostazioni (tempo di blocco automatico, badge, soglia di riconoscimento)</td><td>Non cifrate in <code>chrome.storage.local</code>. Non contengono dati personali.</td></tr>
-          <tr><td>Chiave di licenza Pro ed esito dell'ultima verifica (solo utenti Pro)</td><td>Non cifrati in <code>chrome.storage.local</code>, così Pro funziona anche a vault bloccato o offline.</td></tr>
         </table>
 
         <h2>Pagine web che visiti</h2>
@@ -157,24 +145,13 @@
           vengono inseriti solo dopo che li hai controllati e hai premuto “Fill”, e Formwarden non invia mai un modulo: lo fai tu. Quando compili un
           modulo, il sito riceve i valori che hai approvato, come se li avessi digitati tu; il loro trattamento è regolato dall'informativa di quel sito.
         </p>
-        <p>Gli alias email per sito (per esempio <code>tu+negozio@example.com</code>) sono generati localmente dal dominio del sito.</p>
 
         <h2>Dati che escono dal dispositivo</h2>
-        <p>Formwarden Free non invia nulla. Se usi Formwarden Pro:</p>
-        <ul>
-          <li>
-            <strong>Verifica della licenza.</strong> La chiave di licenza, gli identificativi del prodotto Formwarden e, se le attivazioni per
-            dispositivo sono abilitate, un identificativo di attivazione e un identificativo casuale dell'installazione vengono inviati a
-            <a href="https://polar.sh">Polar</a> (Polar Software Inc.), nostro fornitore di pagamenti e merchant of record, all'attivazione e in
-            seguito al massimo circa una volta al giorno. La risposta di Polar indica se la chiave è valida; può contenere anche dati dell'acquirente,
-            che Formwarden scarta e non conserva.
-          </li>
-          <li>
-            <strong>Acquisti.</strong> L'acquisto di Pro avviene sulla pagina di pagamento di Polar, non nell'estensione. Polar tratta i dati di
-            pagamento e fatturazione secondo la <a href="https://polar.sh/legal/privacy">propria informativa</a>.
-          </li>
-        </ul>
-        <p>I dati dei profili, la password principale, la cronologia e il contenuto delle pagine non vengono mai inviati a Polar né ad altri.</p>
+        <p>
+          Nessuno. Formwarden non contiene codice che invii dati in rete, e la sua politica di sicurezza dei contenuti blocca le richieste di rete
+          dalle pagine dell'estensione. I dati dei profili, la password principale, la cronologia e il contenuto delle pagine non vengono mai inviati
+          allo sviluppatore né ad altri.
+        </p>
 
         <h2>Cosa non facciamo mai</h2>
         <ul>
@@ -199,8 +176,9 @@
         <h2>I tuoi diritti</h2>
         <p>
           Ai sensi del GDPR hai diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione. I dati dei profili sono trattati
-          solo sul tuo dispositivo e puoi consultarli, modificarli, esportarli o cancellarli in qualsiasi momento in Formwarden. Per i dati di licenza e
-          di acquisto scrivi a <a href="mailto:giordano.a90@gmail.com">giordano.a90@gmail.com</a> o a Polar. Puoi anche proporre reclamo al Garante per la protezione dei dati personali.
+          solo sul tuo dispositivo e puoi consultarli, modificarli, esportarli o cancellarli in qualsiasi momento in Formwarden. Per qualsiasi domanda
+          su questa informativa scrivi a <a href="mailto:giordano.a90@gmail.com">giordano.a90@gmail.com</a>. Puoi anche proporre reclamo al Garante per
+          la protezione dei dati personali.
         </p>
 
         <h2>Minori</h2>
